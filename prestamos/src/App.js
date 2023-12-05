@@ -13,6 +13,10 @@ function App() {
   const [cantidad, guardarCantidad] = useState(0);
 
   const [plazo, guardarPlazo] = useState(''); //string vacio dado que los valores de las options estan en string
+
+  //mostrar el total en el Dom
+
+  const [total, guardarTotal] = useState(0);
   return (
     //<div className="App">
     <Fragment>
@@ -28,6 +32,8 @@ function App() {
         guardarCantidad={guardarCantidad}
         plazo = {plazo}
         guardarPlazo = {guardarPlazo}
+        total={total}
+        guardarTotal={guardarTotal}
         />
       </div>
 
