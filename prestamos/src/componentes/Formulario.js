@@ -74,7 +74,7 @@ const Formulario = (props) => {
                 </div>
             </form>
 
-            {(error) ? <p className="error">Todos los campos son obligarios</p> : <p className='resultado'>resultado: {total}</p>}
+            {(error) ? <p className="error">Todos los campos son obligarios</p> : null}
 
         </Fragment>
     );
