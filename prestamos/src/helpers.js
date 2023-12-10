@@ -55,7 +55,7 @@ export function calcularTotal(cantidad, plazo) {
     }
 
     //console.log('plazo',totalPlazo);
-    const totalPagar = totalCantidad+totalPlazo+cantidad;
+    const totalPagar = totalCantidad + totalPlazo + cantidad;
 
     return totalPagar;
 

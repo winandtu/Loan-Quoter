@@ -5,6 +5,7 @@ import Header from './componentes/Header';
 import Formulario from './componentes/Formulario';
 import Resultado from './componentes/Resultado';
 import Mensaje from './componentes/Mensaje';
+import Spinner from './componentes/Spinner'
 
 
 
@@ -17,12 +18,19 @@ function App() {
   const [plazo, guardarPlazo] = useState(''); //string vacio dado que los valores de las options estan en string
 
   //mostrar el total en el Dom
-
   const [total, guardarTotal] = useState(0);
+
+  //mostrar Spinner
+  const [spinner, guardarSpinner] = useState(false);
 
   //condicional de componentes:
   let componenteCargar;
-  if (total === 0) {
+
+  //verifico si el spinner esta activado, si es asi lo muestro y paso a mostrar el resultado
+  if (spinner) {
+    componenteCargar = <Spinner />
+  }
+  else if (total === 0) {
     componenteCargar = <Mensaje />
   } else {
     componenteCargar = <Resultado
@@ -51,6 +59,8 @@ function App() {
           guardarPlazo={guardarPlazo}
           total={total}
           guardarTotal={guardarTotal}
+          spinner={spinner}
+          guardarSpinner={guardarSpinner}
         />
         <div className='mensajes'>
           {componenteCargar}

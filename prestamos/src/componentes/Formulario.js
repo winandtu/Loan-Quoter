@@ -4,7 +4,7 @@ import { calcularTotal } from '../helpers';
 const Formulario = (props) => {
 
     //propiedades del formulario
-    const { cantidad, guardarCantidad, plazo, guardarPlazo, total, guardarTotal } = props;
+    const { cantidad, guardarCantidad, plazo, guardarPlazo, guardarTotal, guardarSpinner } = props;
     //estado local
     const [error, guardarError] = useState(false);
 
@@ -30,9 +30,18 @@ const Formulario = (props) => {
             //Realizar la cotizacion
             guardarError(false); //elimina el error previo
 
-            const total = calcularTotal(cantidad, plazo);
-            //console.log(total);
-            guardarTotal(total);
+            //activa el spinner si no hay error
+            guardarSpinner(true)
+
+            //desactiva el spinner despues de 3 segundos y muestra el resultado
+            setTimeout(() => {
+
+                guardarSpinner(false)
+                const total = calcularTotal(cantidad, plazo);
+                //console.log(total);
+                guardarTotal(total);
+            }, 3000)
+
         }
 
     }

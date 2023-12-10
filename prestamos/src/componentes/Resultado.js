@@ -7,7 +7,7 @@ const Resultado = (props) => { //sfc
             <h2>Resumen</h2>
             <p>Cantidad solicitada: ${cantidad}</p>
             <p>Plazo en meses: {plazo}</p>
-            <p>Pago por mes: ${(total/plazo).toFixed(2)}</p>
+            <p>Pago por mes: ${(total / plazo).toFixed(2)}</p>
             <p>Total a pagar: ${(total).toFixed(2)}</p>
         </div>
     );
